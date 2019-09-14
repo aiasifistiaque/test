@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Post;
 use App\SSCBoardQuestion;
+use App\savedquestionssc as Save;
 use App\Comment;
 use App\Reply;
 use App\Http\Controllers\Controller;
@@ -25,5 +26,20 @@ class QuestionController extends Controller
     public function index()
     {
         return new PostCollection(Post::all());
+    }
+    
+    public function random(){
+        return new Question(Post::inRandomOrder()->first());
+    }
+    
+    public function saveQuestion(Request $request){
+        $save = new Save;
+        $save->studentid = $request->studentid;
+        $save->questionid = $request->questionid;
+        $save->starred = 0;
+        $save->save();
+        return response()->json([
+            "message" => "question saved"
+        ], 201);
     }
 }

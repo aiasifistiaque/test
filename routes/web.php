@@ -26,6 +26,9 @@ Route::get('/app/home', function () {
 Route::get('/app/sscbangla', function () {
     return view('theapp.sscbangla');
 });
+Route::get('/app/randomquestion',function(){
+    return view('theapp.randomQuestions');
+});
 Route::get('/ssc', function () {
     return view('pages.ssc');
 });
@@ -34,6 +37,8 @@ Route::post('/addsscquestion','PostController@postSSCQuestion');
 Route::get('/allquestions',function(){
     return view('pages.view');
 });
+
+
 
 
 

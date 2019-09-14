@@ -22,3 +22,5 @@ Route::get('/questions/{number}','PostController@getTenQuestions');
 Route::get('/question/{question}', 'PostController@getpost');
 Route::get('/question/ssc/{subject}/{board}/{year}','PostController@getSSCQuestionApi');
 Route::apiresource('/qstn', 'QuestionController');
+Route::get('/randomquestion','QuestionController@random');
+Route::post('/savequestion','QuestionController@saveQuestion');

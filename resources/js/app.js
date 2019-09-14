@@ -24,6 +24,7 @@ Vue.component('test-component', require('./components/TestComponent.vue').defaul
 Vue.component('ssc-component', require('./components/SscComponent.vue').default);
 Vue.component('view-questions', require('./components/ViewAllQuestions.vue').default);
 Vue.component('board-question',require('./components/BoardQuestionComponent.vue').default);
+Vue.component('random-question',require('./components/RandomQuestionComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
